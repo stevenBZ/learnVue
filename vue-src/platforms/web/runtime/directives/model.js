@@ -122,7 +122,9 @@ function onCompositionEnd (e) {
   e.target.composing = false
   trigger(e.target, 'input')
 }
-
+////createEvent创建一个一个event对象
+////event.initEvent(eventType,canBubble,cancelable) 事件类型、事件是否起泡、是否可以用preventDefault()方法取消事件
+////dispatchEvent(evt) evt 要分派的event对象
 function trigger (el, type) {
   const e = document.createEvent('HTMLEvents')
   e.initEvent(type, true, true)
